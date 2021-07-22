@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:farmboxapp/Screens/HelpLivechatandPrivacyScreen/livechat/message_screen.dart';
+
 
 import '../../Constraints.dart';
+import 'livechat/message_screen.dart';
 final List<DataList> data = <DataList>[
   DataList(
     'What are my payment options here?',
@@ -97,63 +98,63 @@ class _HelpState extends State<Help> {
                       ),
 
 
-                    Container(
-                      margin: EdgeInsets.all(20),
-                      child: Column(
-                        children: [
-
-                          Padding(
-                            padding: const EdgeInsets.only(left: 30),
-                            child: Row(
-                                children: [
-
-                                  Text("Still if you need please contact us?",textAlign: TextAlign.left,style: TextStyle(color: Colors.red),),
-                                ]
-                            ),
-
-                          ),
-                          SizedBox(height: 20,),
-                          SizedBox(
-                            height: 50,
-                            width: 350,
-                            child: RaisedButton(
-
-                              onPressed: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (context)=>MessagesScreen()));
-
-                              },
-                              padding: EdgeInsets.all(10.0),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(30),
-                              ),
-                              color: PrimaryColor,
-                              child: Padding(
-                                padding: const EdgeInsets.only(left: 60),
-                                child: Row(
-                                  children: [
-
-                                    Icon(Icons.chat,color: Colors.white,size: 20,),
-                                    SizedBox(width: 5,),
-                                    Text(
-                                      'Live Chat'.toUpperCase(),
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        letterSpacing: 1,
-                                        fontSize: 18.0,
-                                        fontWeight: FontWeight.w600,
-
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-
-                      ),
-
-                    ),
+                    // Container(
+                    //   margin: EdgeInsets.all(20),
+                    //   child: Column(
+                    //     children: [
+                    //
+                    //       Padding(
+                    //         padding: const EdgeInsets.only(left: 30),
+                    //         child: Row(
+                    //             children: [
+                    //
+                    //               Text("Still if you need please contact us?",textAlign: TextAlign.left,style: TextStyle(color: Colors.red),),
+                    //             ]
+                    //         ),
+                    //
+                    //       ),
+                    //       SizedBox(height: 20,),
+                    //       SizedBox(
+                    //         height: 50,
+                    //         width: 350,
+                    //         child: RaisedButton(
+                    //
+                    //           onPressed: () {
+                    //             Navigator.push(context, MaterialPageRoute(builder: (context)=>MessagesScreen()));
+                    //
+                    //           },
+                    //           padding: EdgeInsets.all(10.0),
+                    //           shape: RoundedRectangleBorder(
+                    //             borderRadius: BorderRadius.circular(30),
+                    //           ),
+                    //           color: PrimaryColor,
+                    //           child: Padding(
+                    //             padding: const EdgeInsets.only(left: 60),
+                    //             child: Row(
+                    //               children: [
+                    //
+                    //                 Icon(Icons.chat,color: Colors.white,size: 20,),
+                    //                 SizedBox(width: 5,),
+                    //                 Text(
+                    //                   'Live Chat'.toUpperCase(),
+                    //                   style: TextStyle(
+                    //                     color: Colors.white,
+                    //                     letterSpacing: 1,
+                    //                     fontSize: 18.0,
+                    //                     fontWeight: FontWeight.w600,
+                    //
+                    //                   ),
+                    //                 ),
+                    //               ],
+                    //             ),
+                    //           ),
+                    //         ),
+                    //       ),
+                    //     ],
+                    //
+                    //   ),
+                    //
+                    // ),
 
                   ],
                 ),

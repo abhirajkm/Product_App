@@ -1,10 +1,10 @@
 import 'dart:convert';
+import 'package:bexindia/Helper/config.dart';
+import 'package:bexindia/Models/ProductsModel.dart';
+import 'package:bexindia/Provider/AllProductProvider.dart';
+import 'package:bexindia/Screens/ProductScreen/DetailPage.dart';
 import 'package:http/http.dart' as http;
-import 'package:farmboxapp/Helper/config.dart';
-import 'package:farmboxapp/Models/ProductsModel.dart';
-import 'package:farmboxapp/Provider/AllProductProvider.dart';
-import 'package:farmboxapp/Provider/ProductProvider.dart';
-import 'package:farmboxapp/Screens/ProductScreen/DetailPage.dart';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -70,7 +70,7 @@ class _AvailaleProductListState extends State<AvailaleProductList> {
           children: <Widget>[
             Center(
                 child: CircularProgressIndicator(
-                    backgroundColor: Colors.green,
+                    backgroundColor: Colors.blue,
                     valueColor: new AlwaysStoppedAnimation<Color>(
                         Colors.green[100]))),
           ],

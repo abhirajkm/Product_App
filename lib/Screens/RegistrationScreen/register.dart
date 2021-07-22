@@ -1,16 +1,18 @@
 import 'dart:convert';
 
-import 'package:farmboxapp/Constraints.dart';
-import 'package:farmboxapp/Helper/PrefsHelper.dart';
-import 'package:farmboxapp/Helper/config.dart';
-import 'package:farmboxapp/Models/UserModel.dart';
-import 'package:farmboxapp/Screens/LoginScreen/signin.dart';
+import 'package:bexindia/Helper/PrefsHelper.dart';
+import 'package:bexindia/Helper/config.dart';
+import 'package:bexindia/Models/UserModel.dart';
+import 'package:bexindia/Screens/LoginScreen/signin.dart';
+
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import 'package:progress_dialog/progress_dialog.dart';
+
+import '../../Constraints.dart';
 class Register extends StatefulWidget {
   const Register({Key key}) : super(key: key);
 
@@ -78,318 +80,319 @@ class _RegisterState extends State<Register> {
     );
     return Scaffold(
       backgroundColor: BackgroundColor,
-      appBar: AppBar(
+      // appBar: AppBar(
+      //   elevation: 0,
+      //   backgroundColor: BackgroundColor,
+      //   shadowColor: Colors.black87,
+      //   title:
+      // ),
 
-        backgroundColor: Colors.transparent,
-        elevation: 0,
 
-        title: Padding(
-          padding: const EdgeInsets.only(left:60.0),
-          child: Text("Sign Up",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,
-              fontSize: 25,letterSpacing: 1.5,fontFamily:'roboto' )),
-        ),
-        leading: GestureDetector(
-            onTap: (){
-              Navigator.pop(context);
-            },
-            child: Icon(Icons.arrow_back,color:Colors.black,size: 25,)),
-      ),
       body: SingleChildScrollView(
         child: Container(
-          margin: EdgeInsets.all(10),
-          child: Column(
+          height: MediaQuery.of(context).size.height,
+          child: Stack(
             children: [
-              // Padding(
-              //   padding: const EdgeInsets.fromLTRB(25, 25,35 ,00),
-              //   child: Stack(
-              //     children: <Widget>[
-              //       Center(
-              //         child: CircleAvatar(
-              //           radius: 46,
-              //           child: ClipOval(child: Image.asset('assets/logoo.png', height: 150, width: 150, fit: BoxFit.cover,),),
-              //         ),
+              // Container(
+              //   height: 220,
+              //   decoration: BoxDecoration(
+              //     //color: PrimaryColor.withOpacity(0.90),
+              //       borderRadius: BorderRadius.only(
+              //           bottomRight: Radius.circular(80),
+              //           bottomLeft: Radius.circular(80)
               //       ),
-              //       // Positioned(bottom: 0, right: 90 ,child: Container(
-              //       //   height: 35, width: 35,
-              //       //   child: Icon(Icons.add_a_photo, color: Colors.white,size: 20,),
-              //       //   decoration: BoxDecoration(
-              //       //       color: PrimaryColor,
-              //       //       borderRadius: BorderRadius.all(Radius.circular(20))
-              //       //   ),
-              //       // ))
-              //     ],
+              //       image: DecorationImage(
+              //           image:AssetImage("assets/cake3.jpg"),fit: BoxFit.cover )
               //   ),
               // ),
-              Container(
-                margin: EdgeInsets.all(20),
-                child: Form(
-                  key: _formGlobalKey,
-                    child: Column(
-                      children: [
-                      SizedBox(height: 40,),
-                       TextFormField(
-                         onChanged: (String value) {
-                           name = value;
-                         },
-                         controller: _name,
-                        focusNode: _nameFocusNode,
-                        //showCursor: false,
-                        //style: TextStyle(height: 2.8),
-                           decoration: InputDecoration(
-                           enabledBorder: OutlineInputBorder(
-                             borderRadius: BorderRadius.circular(30),
-                           borderSide: BorderSide(color: Colors.grey),
-                        ),
-
-                         hintText: "Full Name",
-                         prefixIcon: Icon(Icons.account_circle,color:PrimaryColor,size: 20,),
-                         focusedBorder: OutlineInputBorder(
-                             borderRadius: BorderRadius.circular(30),
-                             borderSide:BorderSide(color: Colors.grey,) ),
-                          ),
-                         keyboardType: TextInputType.text,
-
-                         //validator: (value)
-                         // {
-                         //   if (value == null || value.isEmpty) {
-                         //     return 'Enter your name';
-                         //   }
-                         //   return null;
-                         // },
-                        ),
-                        SizedBox(height: 18,),
-                        TextFormField(
-                          onChanged: (String value) {
-                            email = value;
-                          },
-                           controller: _email,
-                           focusNode: _emailFocusNode,
-                           //style: TextStyle(height: 3.2),
-                           decoration: InputDecoration(
-                            enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(30),
-                                borderSide: BorderSide(color: Colors.grey,),
-                            ),
-                             hintText: "Email",
-                             prefixIcon: Icon(Icons.email,color:PrimaryColor,size: 20,),
-                             focusedBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(30),
-                                    borderSide:BorderSide(color: Colors.grey,) ),),
-                          keyboardType: TextInputType.text,
-                          validator: (value) => EmailValidator.validate(value) ? null : "Please enter a valid email",
-                        ),
-                          SizedBox(height: 18,),
-                          Row(
+              // Container(
+              //   height: 220,
+              //   decoration: BoxDecoration(
+              //       color: PrimaryColor.withOpacity(0.60),
+              //       borderRadius: BorderRadius.only(
+              //           bottomRight: Radius.circular(80),
+              //           bottomLeft: Radius.circular(80)
+              //       )
+              //   ),
+              // ),
+              // Padding(
+              //   padding: const EdgeInsets.only(left: 100,right: 20,top: 20),
+              //   child: Text("Daya's Cakes \n         & \n    Cookies",
+              //     style: TextStyle(
+              //         color: Colors.white,
+              //         fontSize: 20,
+              //         fontWeight: FontWeight.w600
+              //     ),
+              //   ),
+              // ),
+              Padding(
+                padding: const EdgeInsets.only(top:100),
+                child: Container(
+                  padding: EdgeInsets.all(20),
+                  margin: EdgeInsets.all(20),
+                  height: 600,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(30),
+                    boxShadow: [
+                      BoxShadow(
+                        offset: Offset(0, 0),
+                        blurRadius: 3,
+                        color: Colors.white12,
+                      ),
+                    ],
+                  ),
+                  child: Column(
+                    children: [
+                      SingleChildScrollView(
+                        child: Form(
+                          key: _formGlobalKey,
+                          child: Column(
                             children: [
-                              Expanded(
-                                child: TextFormField(
-                                  readOnly: true,
-                                  style: TextStyle(color: Colors.black),
-                                  cursorColor: Colors.black,
-                                  keyboardType: TextInputType.phone,
-                                  controller: new TextEditingController(text: countryCode),
-                                  decoration: InputDecoration(
+                              SizedBox(
+                                height: 0,
+                              ),
+                              Center(
+                                child: Text("SignUp ",textAlign: TextAlign.justify,
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      //letterSpacing: 1.5,
+                                      fontSize: 30,
+                                      fontWeight: FontWeight.w700
+                                  ),),
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
 
-                                    border: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(30)
+                              TextFormField(
+                                onChanged: (String value) {
+                                  name = value;
+                                },
+                                controller: _name,
+                                focusNode: _nameFocusNode,
+                                //showCursor: false,
+                                //style: TextStyle(height: 2.8),
+                                decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(30),
+                                    borderSide: BorderSide.none,
+                                  ),
+                                  //fillColor: Colors.white,
+                                  filled: true,
+
+
+                                  hintText: "Full Name",
+                                  hintStyle: TextStyle(color: Colors.grey, fontSize: 13),
+                                  prefixIcon: Icon(Icons.account_circle,color:PrimaryColor,size: 18,),
+
+                                ),
+                                keyboardType: TextInputType.text,
+
+                                validator: (value)
+                                {
+                                  if (value == null || value.isEmpty) {
+                                    return 'Enter your name';
+                                  }
+                                  return null;
+                                },
+                              ),
+                              SizedBox(height: 15,),
+                              TextFormField(
+                                onChanged: (String value) {
+                                  email = value;
+                                },
+                                controller: _email,
+                                focusNode: _emailFocusNode,
+                                //style: TextStyle(height: 3.2),
+                                decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(30),
+                                    borderSide: BorderSide.none,
+                                  ),
+                                  //fillColor: Colors.white,
+                                  filled: true,
+                                  hintStyle: TextStyle(color: Colors.grey, fontSize: 13),
+                                  hintText: "Email",
+                                  prefixIcon: Icon(Icons.email,color:PrimaryColor,size: 18,),
+                                ),
+                                keyboardType: TextInputType.text,
+                                validator: (value) => EmailValidator.validate(value) ? null : "Please enter a valid email",
+                              ),
+                              SizedBox(height: 15,),
+                              Row(
+                                children: [
+                                  Expanded(
+                                    child: TextFormField(
+                                      readOnly: true,
+                                      style: TextStyle(color: Colors.black),
+                                      cursorColor: Colors.black,
+                                      keyboardType: TextInputType.phone,
+                                      controller: new TextEditingController(text: countryCode),
+                                      decoration: InputDecoration(
+                                        border: OutlineInputBorder(
+                                          borderRadius: BorderRadius.circular(30),
+                                          borderSide: BorderSide.none,
+                                        ),
+                                        //fillColor: Colors.white,
+                                        filled: true,
+                                        hintStyle: TextStyle(color: Colors.grey, fontSize: 13),
+                                        prefixIcon: Icon(
+                                          CupertinoIcons.globe,
+                                          color: PrimaryColor,
+                                          size: 18,
+                                        ),
+                                      ),
                                     ),
-                                    hintStyle: TextStyle(color: Colors.grey, fontSize: 14),
-                                    prefixIcon: Icon(
-                                      CupertinoIcons.globe,
-                                      color: PrimaryColor,
+                                    flex: 3,
+                                  ),
+                                  SizedBox(width: 7,),
+                                  Expanded(
+                                    child:TextFormField(
+                                      onChanged: (String value) {
+                                        phone = value;
+                                      },
+                                      controller: _phone,
+                                      focusNode: _phoneFocusNode,
+                                      // showCursor: false,
+                                      //style: TextStyle(height: 3.2),
+                                      decoration: InputDecoration(
+                                        border: OutlineInputBorder(
+                                          borderRadius: BorderRadius.circular(30),
+                                          borderSide: BorderSide.none,
+                                        ),
+                                        //fillColor: Colors.white,
+                                        filled: true,
+                                        hintText: "Phone",
+                                        hintStyle: TextStyle(color: Colors.grey, fontSize: 13),
+                                        prefixIcon: Icon(Icons.phone,color:PrimaryColor,size: 20,),
+                                      ),
+
+                                      keyboardType: TextInputType.number,
+                                      inputFormatters: [
+                                        LengthLimitingTextInputFormatter(10)
+                                      ],
+                                      validator: (value) {
+                                        if (value == null || value.length!=10) {
+                                          return 'Enter valid phone number';
+                                        }
+                                        return null;
+                                      },
+                                    ),
+                                    flex: 5,
+                                  )
+                                ],
+                              ),
+                              SizedBox(height: 15,),
+                              TextFormField(
+                                onChanged: (String value) {
+                                  password = value;
+                                },
+                                controller: _password,
+                                focusNode: _passwordFocusNode,
+                                //showCursor: false,
+                                //style: TextStyle(height: 3.2),
+                                decoration: InputDecoration(
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(30),
+                                    borderSide: BorderSide.none,
+                                  ),
+                                  //fillColor: Colors.white,
+                                  filled: true,
+                                  hintText: "Password",
+                                  hintStyle: TextStyle(color: Colors.grey, fontSize: 13),
+                                  prefixIcon: Icon(Icons.lock,color:PrimaryColor,size: 20,),
+                                  suffixIcon: IconButton(
+                                      onPressed: (){
+                                        setState(() {
+                                          _secureText=!_secureText;
+                                        });
+                                      },
+                                      icon: Icon(_secureText?Icons.visibility_off:Icons.remove_red_eye,
+                                        size: _secureText?18:18,
+
+                                        color: _secureText?PrimaryColor:PrimaryColor,
+
+
+                                      )),
+
+                                ),
+                                obscureText: _secureText,
+                                keyboardType: TextInputType.text,
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return 'Enter a password';
+                                  }
+                                  return null;
+                                },
+                              ),
+
+                              SizedBox(height: 15,),
+                              SizedBox(
+                                height: 50,
+                                width: double.infinity,
+                                child: ElevatedButton(
+                                  onPressed: () {
+                                    final FormState form = _formGlobalKey.currentState;
+                                    if(form.validate()){
+                                      SignUp();
+                                      //Navigator.push(context,MaterialPageRoute(builder: (context)=>SignIn()));
+                                    }
+                                  },
+                                  style: ElevatedButton.styleFrom(
+                                    primary: PrimaryColor,
+                                    // onPrimary: Colors.yellow,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(30.0),
+                                    ),
+
+                                  ),
+                                  child: Text(
+                                    'Sign Up',
+                                    style: TextStyle(
+                                      color: BackgroundColor,
+                                      letterSpacing: 1.0,
+                                      fontSize: 18.0,
+                                      fontWeight: FontWeight.w600,
+
                                     ),
                                   ),
                                 ),
-                                flex: 2,
                               ),
-                              SizedBox(width: 10,),
-                              Expanded(
-                                  child:TextFormField(
-                                    onChanged: (String value) {
-                                      phone = value;
-                                    },
-                                    controller: _phone,
-                                    focusNode: _phoneFocusNode,
-                                    // showCursor: false,
-                                    //style: TextStyle(height: 3.2),
-                                    decoration: InputDecoration(
-                                      enabledBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(30),
-                                        borderSide: BorderSide(color: Colors.grey),
-                                      ),
-                                      hintText: "Phone",
-                                      prefixIcon: Icon(Icons.phone,color:PrimaryColor,size: 20,),
-                                      focusedBorder: OutlineInputBorder(
-                                          borderRadius: BorderRadius.circular(30),
-                                          borderSide:BorderSide(color: Colors.grey,) ),),
 
-                                    keyboardType: TextInputType.number,
-                                    inputFormatters: [
-                                      LengthLimitingTextInputFormatter(10)
-                                    ],
-                                    validator: (value) {
-                                      if (value == null || value.length!=10) {
-                                        return 'Enter valid phone number';
-                                      }
-                                      return null;
-                                    },
-                                  ),
-                                flex: 4,
-                              )
                             ],
                           ),
-                          SizedBox(height: 18,),
-                          TextFormField(
-                            onChanged: (String value) {
-                              address = value;
-                            },
-                            controller: _address,
-                           focusNode: _addressFocusNode,
-                           //showCursor: false,
-                           //style: TextStyle(height: 3.2),
-                           decoration: InputDecoration(
-                                  enabledBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(30),
-                                      borderSide: BorderSide(color: Colors.grey),
-                                 ),
-                                   hintText: "Address",
-                                    prefixIcon: Icon(Icons.home,color:PrimaryColor,size: 20,),
-
-                                  focusedBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(30),
-                                      borderSide:BorderSide(color: Colors.grey,) ),),
-                            keyboardType: TextInputType.text,
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Enter your address';
-                              }
-                              return null;
-                            },
-                              ),
-                          SizedBox(height: 18,),
-                          TextFormField(
-                            onChanged: (String value) {
-                              password = value;
-                            },
-                            controller: _password,
-                            focusNode: _passwordFocusNode,
-                            //obscureText: true,
-                            //showCursor: false,
-                            //style: TextStyle(height: 3.2),
-                             decoration: InputDecoration(
-                                 enabledBorder: OutlineInputBorder(
-                                   borderRadius: BorderRadius.circular(30),
-                                      borderSide: BorderSide(color: Colors.grey),
-                                   ),
-                                  hintText: "Password",
-                                   prefixIcon: Icon(Icons.lock,color:PrimaryColor,size: 20,),
-                                   suffixIcon: IconButton(
-                                       onPressed: (){
-                                         setState(() {
-                                         _secureText=!_secureText;
-                                       });
-                                         },
-                                       icon: Icon(_secureText?Icons.visibility_off:Icons.remove_red_eye,
-                                         size: _secureText?20:22,
-
-                                         color: _secureText?Colors.green:PrimaryColor,
-
-
-                                       )),
-                                        focusedBorder: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(30),
-                                         borderSide:BorderSide(color: Colors.grey,) ),),
-                            obscureText: _secureText,
-                            keyboardType: TextInputType.text,
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Enter a password';
-                              }
-                              return null;
-                            },
-                          ),
-                    //     SizedBox(height: 18,),
-                    //     TextFormField(
-                    //       controller: _confirmpass,
-                    //         focusNode: _confirmPassFocusNode,
-                    //         //obscureText: true,
-                    //         //showCursor: false,
-                    //         //style: TextStyle(height: 3.2),
-                    //         decoration: InputDecoration(
-                    //
-                    //              hintText: "Confirm Password",
-                    //            prefixIcon: Icon(Icons.lock,color:PrimaryColor,size: 20,),
-                    //           suffixIcon: IconButton(
-                    //               icon: Icon(_confirmSecure?Icons.visibility_off:Icons.remove_red_eye,
-                    //                 size: _confirmSecure?20:22,
-                    //
-                    //                 color: _confirmSecure?Colors.green:PrimaryColor,
-                    //
-                    //               ),
-                    //             onPressed: (){
-                    //               setState(() {
-                    //                 _confirmSecure=!_confirmSecure;
-                    //               });
-                    //             },
-                    //           ),
-                    //           enabledBorder: OutlineInputBorder(
-                    //             borderRadius: BorderRadius.circular(30),
-                    //             borderSide: BorderSide(color: Colors.grey),
-                    //           ),
-                    //           focusedBorder: OutlineInputBorder(
-                    //           borderRadius: BorderRadius.circular(30),
-                    //            borderSide:BorderSide(color: Colors.grey,) ),),
-                    //       obscureText: _confirmSecure,
-                    //       keyboardType: TextInputType.text,
-                    //         validator: (value){
-                    //           if(value.isEmpty)
-                    //             return 'Confirm Your Password';
-                    //           if(value != _password.text)
-                    //             return 'Your Password Not Matching';
-                    //           return null;
-                    //         }
-                    // ),
-                        SizedBox(height: 25,),
-                        SizedBox(
-                        height: 50,
-                        width: double.infinity,
-                        child: ElevatedButton(
-                          onPressed: () {
-                            final FormState form = _formGlobalKey.currentState;
-                            if(form.validate()){
-                              SignUp();
-                              //Navigator.push(context,MaterialPageRoute(builder: (context)=>SignIn()));
-                            }
-                          },
-                          style: ElevatedButton.styleFrom(
-                            primary: PrimaryColor,
-                           // onPrimary: Colors.yellow,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30.0),
-                            ),
-
-                          ),
-                         child: Text(
-                        'Sign Up'.toUpperCase(),
-                        style: TextStyle(
-                          color: BackgroundColor,
-                          letterSpacing: 1.0,
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.w600,
-
                         ),
                       ),
-                    ),
+                    ],
                   ),
+                ),
+              ),
+
+              Positioned(
+                bottom: 60,
+                left: 70,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+
+                    Text("Already have an account?  ",style: TextStyle(fontSize:13),),
+                    GestureDetector(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>SignIn()));
+                        },
+                        child: Text("Sign In now!",style: TextStyle(color:PrimaryColor,fontWeight: FontWeight.w600),))
+                  ],
+                ),
+              )
+
 
             ],
           ),
         ),
-              ),
-        ]
+
       ),
-    )
-    )
     );
   }
   void SignUp() async {
@@ -407,14 +410,31 @@ class _RegisterState extends State<Register> {
     if (success) {
       print(jsonEncode(response.body));
       PrefsHelper.setUser(response.body);
-      Navigator.push(context, MaterialPageRoute(builder: (context)=>SignIn()));
+      showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Text("You have Successfully registered"),
+              content: Text("Please login"),
+              actions: <Widget>[
+                FlatButton(
+                  child: Text("Login"),
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>SignIn()));
+                    //Navigator.of(context).pop();
+                  },
+                )
+              ],
+            );
+          });
+      //Navigator.push(context, MaterialPageRoute(builder: (context)=>SignIn()));
     } else {
       showDialog(
           context: context,
           builder: (BuildContext context) {
             return AlertDialog(
-              title: Text("Account Not Found"),
-              content: Text("Please verify"),
+              title: Text("Already have an account"),
+              content: Text("Please login"),
               actions: <Widget>[
                 FlatButton(
                   child: Text("close"),

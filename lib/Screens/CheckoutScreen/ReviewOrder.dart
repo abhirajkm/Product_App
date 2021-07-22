@@ -1,31 +1,22 @@
 import 'dart:convert';
-import 'dart:math';
-
-import 'package:farmboxapp/Helper/config.dart';
-import 'package:farmboxapp/Models/CartModel.dart';
-import 'package:farmboxapp/Models/ProductsModel.dart';
-import 'package:farmboxapp/Models/UserModel.dart';
-import 'package:farmboxapp/Provider/CartProvider.dart';
-
-import 'package:farmboxapp/Screens/Catogory/CategoryList.dart';
-import 'package:farmboxapp/Screens/CheckoutScreen/ShippingAddress.dart';
 
 
-import 'package:farmboxapp/Screens/PaymentScreen/paymentsuccess.dart';
-import 'package:farmboxapp/Screens/CheckoutScreen/Components/NewAddress.dart';
+import 'package:bexindia/Models/ProductsModel.dart';
+import 'package:bexindia/Models/UserModel.dart';
+import 'package:bexindia/Provider/CartProvider.dart';
+
+
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-// import 'package:provider/provider.dart';
-// import 'package:savebox/Models/UserDetails.dart';
-// import 'package:savebox/Provider/BiddingProvider.dart';
-// import 'package:savebox/Provider/UserDeatailProvider.dart';
-// import 'package:savebox/Screen/Checkout/ShippingDetails.dart';
-// import 'package:savebox/helpers/Config.dart';
+
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../Constraints.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
+
+import 'Components/NewAddress.dart';
 
 
 class ReviewOrder extends StatefulWidget {

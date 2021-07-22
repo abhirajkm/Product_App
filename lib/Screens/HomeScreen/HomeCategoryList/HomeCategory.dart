@@ -1,9 +1,9 @@
 import 'dart:convert';
 
-import 'package:farmboxapp/Helper/config.dart';
-import 'package:farmboxapp/Models/CategoryModel.dart';
-import 'package:farmboxapp/Provider/CategoryProvider.dart';
-import 'package:farmboxapp/Screens/Catogory/SubProductsList.dart';
+import 'package:bexindia/Helper/config.dart';
+import 'package:bexindia/Models/CategoryModel.dart';
+import 'package:bexindia/Provider/CategoryProvider.dart';
+import 'package:bexindia/Screens/Catogory/SubProductsList.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
@@ -101,7 +101,7 @@ class _HomeCategoryListState extends State<HomeCategoryList> {
           children: <Widget>[
             Center(
                 child: CircularProgressIndicator(
-                    backgroundColor: Colors.green,
+                    backgroundColor: Colors.blue,
                     valueColor: new AlwaysStoppedAnimation<Color>(
                         Colors.green[100]))),
           ],

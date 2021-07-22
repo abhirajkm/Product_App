@@ -1,13 +1,13 @@
-import 'package:farmboxapp/Provider/CartProvider.dart';
-import 'package:farmboxapp/Screens/CheckoutScreen/ReviewOrder.dart';
 
-import 'package:farmboxapp/Constraints.dart';
-import 'package:farmboxapp/Screens/HomeScreen/HomeScreen.dart';
 
+import 'package:bexindia/Provider/CartProvider.dart';
+import 'package:bexindia/Screens/CheckoutScreen/ReviewOrder.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:smooth_star_rating/smooth_star_rating.dart';
-import 'package:farmboxapp/Screens/ShoppingCartScreen/cartcard.dart';
+
+import '../../Constraints.dart';
+import 'cartcard.dart';
+
 
 class Cart extends StatelessWidget {
   const Cart({Key key}) : super(key: key);

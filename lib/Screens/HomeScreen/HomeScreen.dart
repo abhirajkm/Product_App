@@ -1,19 +1,13 @@
-import 'package:farmboxapp/Constraints.dart';
-import 'package:farmboxapp/Screens/Catogory/CategoryList.dart';
-import 'package:farmboxapp/Screens/HomeScreen/Category_Biscuits/SnacksAll.dart';
-import 'package:farmboxapp/Screens/HomeScreen/Category_Pickle/CategoryPickle.dart';
-
-
-
-
-
-import 'package:farmboxapp/Screens/HomeScreen/ProductsForYou/AvailableProList.dart';
-import 'package:farmboxapp/Screens/HomeScreen/ProductsForYou/AvailableProductAll.dart';
-import 'package:farmboxapp/Screens/HomeScreen/Category_Biscuits/CategorySnacks.dart';
+import 'package:bexindia/Screens/Catogory/CategoryList.dart';
 import 'package:flutter/material.dart';
+import 'Category_Biscuits/CategorySnacks.dart';
+import 'Category_Biscuits/SnacksAll.dart';
+import 'Category_Pickle/CategoryPickle.dart';
 import 'Category_Pickle/PickleAll.dart';
 import 'HeaderWithSearch.dart';
 import 'HomeCategoryList/HomeCategory.dart';
+import 'ProductsForYou/AvailableProList.dart';
+import 'ProductsForYou/AvailableProductAll.dart';
 import 'TitleWithViewAll.dart';
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key key}) : super(key: key);

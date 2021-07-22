@@ -1,8 +1,10 @@
 import 'dart:async';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:farmboxapp/Constraints.dart';
+
 import 'package:pin_code_fields/pin_code_fields.dart';
+
+import '../../../Constraints.dart';
 
 
 class OtpWidget extends StatefulWidget {

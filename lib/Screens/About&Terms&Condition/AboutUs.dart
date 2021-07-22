@@ -1,5 +1,7 @@
-import 'package:farmboxapp/Constraints.dart';
+
 import 'package:flutter/material.dart';
+
+import '../../Constraints.dart';
 
 
 
@@ -48,7 +50,7 @@ class _AboutState extends State<About> {
                 decoration: new BoxDecoration(
                   image: new DecorationImage(
                     image: ExactAssetImage(
-                        "assets/logoo.png"),
+                        "assets/farmbox.jpg"),
                     fit: BoxFit.contain,
                   ),
 
@@ -79,7 +81,7 @@ class _AboutState extends State<About> {
                   margin: EdgeInsets.only(left: 10,right: 10),
 
                   //alignment: Alignment.topRight,
-                  child: Text("Farmbox Direct was founded in 2014 with the mission to make high quality, farm-fresh food more accessible to all families.",
+                  child: Text("We will provide high quality, farm-fresh food, more accessible to all families.",
                     textAlign: TextAlign.justify,
                     style: TextStyle(
                         color: Colors.black,fontSize: 17,

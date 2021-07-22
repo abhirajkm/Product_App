@@ -1,4 +1,4 @@
-import 'package:farmboxapp/Constraints.dart';
+
 import 'package:flutter/material.dart';
 
 
@@ -46,7 +46,7 @@ class _TermsandConditionsState extends State<TermsandConditions> {
                 decoration: new BoxDecoration(
                   image: new DecorationImage(
                     image: ExactAssetImage(
-                        "assets/logoo.png"),
+                        "assets/farmbox.jpg"),
                     fit: BoxFit.contain,
                   ),
 
@@ -77,7 +77,7 @@ class _TermsandConditionsState extends State<TermsandConditions> {
                   margin: EdgeInsets.only(left: 10,right: 10),
 
                   //alignment: Alignment.topRight,
-                  child: Text(" We reserve the right to revise these Terms and Conditions from time to time as explained further. Please check periodically for changes. If you do not agree with any of the revised Terms and Conditions please do not order from farmbox.\n\nTo order from farmbox app, you must register with us. This is referred to as \’set up an account\’ throughout our website and literature. However, this is not a credit account; payment will be required upon delivery of goods. This account can be set up by following the instructions on the website.",
+                  child: Text(" We reserve the right to revise these Terms and Conditions from time to time as explained further. Please check periodically for changes. If you do not agree with any of the revised Terms and Conditions please do not order from Behindia.\n\nTo order from Behindia app, you must register with us. This is referred to as \’set up an account\’ throughout our App and literature. However, this is not a credit account; payment will be required upon delivery of goods. This account can be set up by following the instructions on the app.",
                     textAlign: TextAlign.justify,
                     style: TextStyle(
                         color: Colors.black,fontSize: 17,

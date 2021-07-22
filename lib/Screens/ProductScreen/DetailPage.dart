@@ -1,25 +1,22 @@
 import 'dart:convert';
-import 'package:farmboxapp/Helper/config.dart';
-import 'package:farmboxapp/Models/CartModel.dart';
-import 'package:farmboxapp/Models/FavoriteModel.dart';
-import 'package:farmboxapp/Models/UserModel.dart';
-import 'package:farmboxapp/Provider/CartProvider.dart';
-import 'package:farmboxapp/Provider/FavoriteProvider.dart';
-import 'package:farmboxapp/Screens/ShoppingCartScreen/cartcard.dart';
+
+
+import 'package:bexindia/Helper/config.dart';
+import 'package:bexindia/Models/CartModel.dart';
+import 'package:bexindia/Models/UserModel.dart';
+import 'package:bexindia/Provider/CartProvider.dart';
 import 'package:flutter/rendering.dart';
 import 'package:http/http.dart' as http;
 import 'package:badges/badges.dart';
-import 'package:farmboxapp/Constraints.dart';
-import 'package:farmboxapp/Screens/ProductScreen/Components/RecommendedGrid_View.dart';
-import 'package:farmboxapp/Screens/ProductScreen/Components/Recommended_ViewAll.dart';
-import 'package:farmboxapp/Screens/ShoppingCartScreen/cart.dart';
+
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
 
-import 'Components/Recommended_Product.dart';
+import '../../Constraints.dart';
+
 
 class ProductDetail extends StatefulWidget {
   const ProductDetail({Key key}) : super(key: key);
@@ -99,7 +96,7 @@ class _ProductDetailState extends State<ProductDetail> {
                   Navigator.pushReplacementNamed(context, "/myCart");
                 },
                 child: Badge(
-                  badgeColor: Colors.green,
+                  badgeColor: PrimaryColor,
                   position: BadgePosition.topEnd(top: 4),
                   badgeContent: Text(
                     cartProvider.cartCount.toString(),
@@ -206,7 +203,7 @@ class _ProductDetailState extends State<ProductDetail> {
                           height: 20,
                           width: 50,
                           decoration: BoxDecoration(
-                              color: Colors.green,
+                              color: PrimaryColor,
                               borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(10),
                                 //topLeft: Radius.circular(5),
@@ -225,197 +222,184 @@ class _ProductDetailState extends State<ProductDetail> {
                       ),
                       Positioned(
                         top: 280,
-                        child: Center(
-                          child: Container(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Center(
-                                  child: Text(
-                                    productid.name,
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.w600),
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 8,
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 100),
-                                  child: Center(
-                                    child: SmoothStarRating(
-                                        allowHalfRating: false,
-                                        onRated: (v) {},
-                                        starCount: 5,
-                                        rating: rating,
-                                        size: 25.0,
-                                        isReadOnly: false,
-                                        filledIconData: Icons.star,
-                                        halfFilledIconData: Icons.star_half,
-                                        color: Colors.amber,
-                                        borderColor: Colors.amber,
-                                        spacing: 0.0),
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 8,
-                                ),
-                                Container(
-                                  margin: EdgeInsets.only(left: 10, right: 10),
-                                  //height: 90,
-                                  width: 300,
-                                  child: Center(
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          productid.description,textAlign: TextAlign.justify,
-                                          maxLines: 6,
-                                          style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 14,
+                        child: Container(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            //crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Center(
+                                child: Text(
+                                  productid.name,
+                                  style: TextStyle(
 
-
-                                              //letterSpacing: 1.5
-                                              height: 1.2),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
+                                      color: Colors.black,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w600),
                                 ),
-                                SizedBox(
-                                  height: 50,
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 100),
-                                  child: Center(
-                                    child: Text("MRP: ₹"+productid.mrp.toString(),
-                                      style: TextStyle(
-                                          color: Colors.grey,
-                                          fontSize: 15,
-                                          decoration: TextDecoration.lineThrough,
-                                         // fontWeight: FontWeight.bold
-                                      ),),
-                                  ),
-                                ),
-                                SizedBox(height:10,),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 100),
-                                  child: Center(
-                                    child: Text("Offer Price: ₹"+productid.sellingPrice.toString(),
-                                      style: TextStyle(
-                                          color: PrimaryColor,
-                                          fontSize: 16,
-
-                                          fontWeight: FontWeight.w600
-                                      ),),
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 18,
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 40),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    crossAxisAlignment: CrossAxisAlignment.center,
+                              ),
+                              SizedBox(
+                                height: 8,
+                              ),
+                              Center(
+                                child: SmoothStarRating(
+                                    allowHalfRating: false,
+                                    onRated: (v) {},
+                                    starCount: 5,
+                                    rating: rating,
+                                    size: 25.0,
+                                    isReadOnly: false,
+                                    filledIconData: Icons.star,
+                                    halfFilledIconData: Icons.star_half,
+                                    color: Colors.amber,
+                                    borderColor: Colors.amber,
+                                    spacing: 0.0),
+                              ),
+                              SizedBox(
+                                height: 8,
+                              ),
+                              Container(
+                                margin: EdgeInsets.only(left: 10, right: 10),
+                                //height: 90,
+                                width: 300,
+                                child: Center(
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
-                                      Padding(
-                                        padding: const EdgeInsets.only(right: 20),
-                                        child: Container(
-                                          child: Row(
-                                            children: [
-                                              Container(
-                                                  height: 30,
-                                                  decoration: BoxDecoration(
-                                                      shape: BoxShape.circle,
-                                                      color: Colors.green.shade50),
-                                                  child: IconButton(
-                                                      icon: Icon(
-                                                        Icons.remove,
-                                                        size: 17,
-                                                        color: Colors.green,
-                                                      ),
-                                                      onPressed: (){
-                                                        removeItem();
-                                                      })),
-                                              SizedBox(
-                                                width: 3,
-                                              ),
-                                              Text(
-                                                quantity.toString(),
-                                                style: TextStyle(
-                                                    color: Colors.black,
-                                                    fontSize: 15,
-                                                    fontWeight: FontWeight.w600),
-                                              ),
-                                              SizedBox(
-                                                width: 3,
-                                              ),
-                                              Container(
-                                                  height: 30,
-                                                  //width: 30,
-                                                  decoration: BoxDecoration(
-                                                      shape: BoxShape.circle,
-                                                      color: Colors.green),
-                                                  child: Center(
-                                                      child: IconButton(
-                                                          icon: Icon(
-                                                            Icons.add,
-                                                            size: 17,
-                                                            color: Colors.white,
-                                                          ),
-                                                          onPressed: (){
-                                                            addQty();
-                                                          }))),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(
-                                        width: 7,
-                                      ),
-                                      SizedBox(
-                                        height: 40,
-                                        width: 130,
-                                        child: ElevatedButton(
-                                          style: ElevatedButton.styleFrom(
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius: BorderRadius.circular(30),
-                                            ),
-                                            primary: PrimaryColor
-                                          ),
-                                            onPressed: (){
+                                      Text(
+                                        productid.description,textAlign: TextAlign.justify,
+                                        maxLines: 6,
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 14,
 
-                                            setState(() {
-                                              addItem();
-                                            });
 
-                                              },
-
-                                            child: Row(
-                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                              children: [
-                                                Icon(Icons.add_shopping_cart,size: 15,color: Colors.white,),
-
-                                                Text("Add to Cart",
-                                                  style:TextStyle(
-                                                    color: Colors.white,
-                                                    fontWeight: FontWeight.w600,
-                                                    fontSize: 15
-                                                  ) ,)
-                                              ],
-                                            )),
+                                            //letterSpacing: 1.5
+                                            height: 1.2),
                                       ),
                                     ],
                                   ),
                                 ),
-                                SizedBox(height: 10,)
-                              ],
-                            ),
+                              ),
+                              SizedBox(
+                                height: 50,
+                              ),
+                              Center(
+                                child: Text("MRP: ₹"+productid.mrp.toString(),
+                                  style: TextStyle(
+                                      color: Colors.grey,
+                                      fontSize: 15,
+                                      decoration: TextDecoration.lineThrough,
+                                     // fontWeight: FontWeight.bold
+                                  ),),
+                              ),
+                              SizedBox(height:10,),
+                              Center(
+                                child: Text("Offer Price: ₹"+productid.sellingPrice.toString(),
+                                  style: TextStyle(
+                                      color: PrimaryColor,
+                                      fontSize: 16,
+
+                                      fontWeight: FontWeight.w600
+                                  ),),
+                              ),
+                              SizedBox(
+                                height: 18,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(right: 20),
+                                    child: Container(
+                                      child: Row(
+                                        children: [
+                                          Container(
+                                              height: 30,
+                                              decoration: BoxDecoration(
+                                                  shape: BoxShape.circle,
+                                                  color:PrimaryColor.withOpacity(0.09)),
+                                              child: IconButton(
+                                                  icon: Icon(
+                                                    Icons.remove,
+                                                    size: 17,
+                                                    color: PrimaryColor,
+                                                  ),
+                                                  onPressed: (){
+                                                    removeItem();
+                                                  })),
+                                          SizedBox(
+                                            width: 3,
+                                          ),
+                                          Text(
+                                            quantity.toString(),
+                                            style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 15,
+                                                fontWeight: FontWeight.w600),
+                                          ),
+                                          SizedBox(
+                                            width: 3,
+                                          ),
+                                          Container(
+                                              height: 30,
+                                              //width: 30,
+                                              decoration: BoxDecoration(
+                                                  shape: BoxShape.circle,
+                                                  color: PrimaryColor),
+                                              child: Center(
+                                                  child: IconButton(
+                                                      icon: Icon(
+                                                        Icons.add,
+                                                        size: 17,
+                                                        color: Colors.white,
+                                                      ),
+                                                      onPressed: (){
+                                                        addQty();
+                                                      }))),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 7,
+                                  ),
+                                  SizedBox(
+                                    height: 40,
+                                    width: 130,
+                                    child: ElevatedButton(
+                                      style: ElevatedButton.styleFrom(
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(30),
+                                        ),
+                                        primary: PrimaryColor
+                                      ),
+                                        onPressed: (){
+
+                                        setState(() {
+                                          addItem();
+                                        });
+
+                                          },
+
+                                        child: Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Icon(Icons.add_shopping_cart,size: 15,color: Colors.white,),
+
+                                            Text("Add to Cart",
+                                              style:TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.w600,
+                                                fontSize: 15
+                                              ) ,)
+                                          ],
+                                        )),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 10,)
+                            ],
                           ),
                         ),
                       ),
