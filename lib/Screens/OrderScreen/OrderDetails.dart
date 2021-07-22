@@ -3,10 +3,10 @@ import 'dart:ui';
 
 
 import 'package:badges/badges.dart';
-import 'package:farmboxapp/Constraints.dart';
-import 'package:farmboxapp/Helper/config.dart';
-import 'package:farmboxapp/Models/Orders.dart';
-import 'package:farmboxapp/Provider/CartProvider.dart';
+import 'package:bexindia/Helper/config.dart';
+import 'package:bexindia/Models/Orders.dart';
+import 'package:bexindia/Provider/CartProvider.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -14,6 +14,8 @@ import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import '../../Constraints.dart';
 
 class OrderDetails extends StatefulWidget {
   @override
@@ -54,7 +56,7 @@ class _OrderDetailsState extends State<OrderDetails> {
                     Navigator.pushReplacementNamed(context, "/myCart");
                   },
                   child: Badge(
-                    badgeColor: Colors.green,
+                    badgeColor: PrimaryColor,
                     position: BadgePosition.topEnd(top: 4),
                     badgeContent: Text(cartProvider.cartCount.toString(),style: TextStyle(color: Colors.white,fontSize: 13),),
                     child: Icon(Icons.shopping_cart,color: Colors.black,size: 23,),

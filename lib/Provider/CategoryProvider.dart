@@ -1,4 +1,5 @@
-import 'package:farmboxapp/Models/CategoryModel.dart';
+
+import 'package:bexindia/Models/CategoryModel.dart';
 import 'package:flutter/material.dart';
 
 class CategoryProvider extends ChangeNotifier{

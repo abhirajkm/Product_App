@@ -1,5 +1,5 @@
-import 'package:farmboxapp/Provider/CartProvider.dart';
-import 'package:farmboxapp/Screens/CheckoutScreen/ReviewOrder.dart';
+
+import 'package:bexindia/Provider/CartProvider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
@@ -107,9 +107,9 @@ class _CartCardState extends State<CartCard> {
                                           },
                                           child: CircleAvatar(
                                             radius: 12,
-                                            backgroundColor: Colors.green.withOpacity(0.2),
+                                            backgroundColor: PrimaryColor.withOpacity(0.09),
                                             child:  Text("-",style: TextStyle(
-                                                color: Colors.green,
+                                                color: PrimaryColor,
                                                 fontSize: 16,
                                                 fontWeight: FontWeight.bold
                                             ),),
@@ -130,7 +130,7 @@ class _CartCardState extends State<CartCard> {
                                           },
                                           child: CircleAvatar(
                                             radius: 12,
-                                            backgroundColor: Colors.green,
+                                            backgroundColor: PrimaryColor,
                                             child:  Text("+",style: TextStyle(
                                               color: Colors.white,
                                               fontSize: 14,

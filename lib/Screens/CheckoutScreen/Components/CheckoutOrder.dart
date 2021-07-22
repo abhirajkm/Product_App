@@ -1,10 +1,12 @@
 import 'dart:convert';
-import 'package:farmboxapp/Constraints.dart';
-import 'package:farmboxapp/Helper/PrefsHelper.dart';
-import 'package:farmboxapp/Screens/OrdertrackScreen/locateme.dart';
+import 'package:bexindia/Helper/PrefsHelper.dart';
+import 'package:bexindia/Screens/OrdertrackScreen/locateme.dart';
+
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
+
+import '../../../Constraints.dart';
 
 class Checkout extends StatefulWidget {
   @override
@@ -52,7 +54,7 @@ class _CheckoutState extends State<Checkout> {
               child: Column(
                 children: [
                   SizedBox(height: 5,),
-                  Icon(Icons.keyboard_arrow_up,color: Colors.green,),
+                  Icon(Icons.keyboard_arrow_up,color: PrimaryColor,),
                   SizedBox(height: 10,),
                   Text("DELIVERY ADDRESS",style: TextStyle(fontWeight: FontWeight.bold),),
                   SizedBox(
@@ -77,7 +79,7 @@ class _CheckoutState extends State<Checkout> {
                         hintStyle: TextStyle(color: Colors.grey, fontSize: 12),
                         prefixIcon: Icon(
                           Icons.supervised_user_circle,
-                          color: Colors.green[800],
+                          color:PrimaryColor,
                         ),
                       ),
                     ),
@@ -102,7 +104,7 @@ class _CheckoutState extends State<Checkout> {
                         hintStyle: TextStyle(color: Colors.grey, fontSize: 14),
                         prefixIcon: Icon(
                           Icons.location_pin,
-                          color: Colors.green[800],
+                          color:PrimaryColor,
                         ),
                       ),
                     ),
@@ -128,7 +130,7 @@ class _CheckoutState extends State<Checkout> {
                         hintStyle: TextStyle(color: Colors.grey, fontSize: 14),
                         prefixIcon: Icon(
                           Icons.location_pin,
-                          color: Colors.green[800],
+                          color: PrimaryColor,
                         ),
                       ),
                     ),

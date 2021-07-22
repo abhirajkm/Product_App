@@ -1,8 +1,11 @@
-import 'package:farmboxapp/Screens/LoginScreen/signin.dart';
+
+import 'package:bexindia/Constraints.dart';
+import 'package:bexindia/Screens/LoginScreen/signin.dart';
 import 'package:flutter/material.dart';
-import 'package:farmboxapp/Screens/OnboardingScreen/content_model.dart';
-import 'package:farmboxapp/Screens/OnboardingScreen/SplashScreen.dart';
+
 import 'package:flutter_svg/flutter_svg.dart';
+
+import 'content_model.dart';
 
 class Onboarding extends StatefulWidget {
   const Onboarding({Key key}) : super(key: key);
@@ -48,6 +51,7 @@ class _OnboardingState extends State<Onboarding> {
                     children: [
                     Image.asset(
                       contents[i].image,
+
                     //'assets/images/farm1.jpg',
                     fit: BoxFit.cover,
                     height: 300,
@@ -113,7 +117,7 @@ class _OnboardingState extends State<Onboarding> {
                   curve: Curves.bounceIn,
                 );
               },
-              color: Theme.of(context).primaryColor,
+              color: PrimaryColor,
               textColor: Colors.white,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30),
@@ -137,7 +141,7 @@ class _OnboardingState extends State<Onboarding> {
       margin: EdgeInsets.only(right: 5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30),
-        color: Theme.of(context).primaryColor,
+        color: PrimaryColor,
       ),
     );
   }

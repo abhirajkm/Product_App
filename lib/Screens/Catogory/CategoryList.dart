@@ -1,19 +1,17 @@
 import 'dart:convert';
 import 'package:badges/badges.dart';
-import 'package:farmboxapp/Helper/config.dart';
-import 'package:farmboxapp/Models/CategoryModel.dart';
-import 'package:farmboxapp/Provider/CartProvider.dart';
-import 'package:farmboxapp/Provider/CategoryProvider.dart';
-import 'package:farmboxapp/Screens/Catogory/SubProductsList.dart';
-import 'package:farmboxapp/Screens/Catogory/CategoryCard.dart';
-import 'package:farmboxapp/Screens/ProductScreen/DetailPage.dart';
-import 'package:farmboxapp/Screens/Searchitems/search.dart';
-import 'package:farmboxapp/Screens/ShoppingCartScreen/cart.dart';
+import 'package:bexindia/Helper/config.dart';
+import 'package:bexindia/Models/CategoryModel.dart';
+import 'package:bexindia/Provider/CartProvider.dart';
+import 'package:bexindia/Provider/CategoryProvider.dart';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
 
 import '../../Constraints.dart';
+import 'CategoryCard.dart';
+import 'SubProductsList.dart';
 class CategoryGrid extends StatefulWidget {
   const CategoryGrid({Key key}) : super(key: key);
 
@@ -100,7 +98,7 @@ class _CategoryGridState extends State<CategoryGrid> {
                       Navigator.pushReplacementNamed(context, "/myCart");
                     },
                     child: Badge(
-                      badgeColor: Colors.green,
+                      badgeColor: PrimaryColor,
                       position: BadgePosition.topEnd(top: 4),
                       badgeContent: Text(cartProvider.cartCount.toString(),style: TextStyle(color: Colors.white,fontSize: 13),),
                       child: Icon(Icons.shopping_cart,color: Colors.black,size: 23,),
@@ -139,7 +137,7 @@ class _CategoryGridState extends State<CategoryGrid> {
               children: <Widget>[
                 Center(
                     child: CircularProgressIndicator(
-                        backgroundColor: Colors.green,
+                        backgroundColor: Colors.blue,
                         valueColor: new AlwaysStoppedAnimation<Color>(
                             Colors.green[100]))),
               ],

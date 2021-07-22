@@ -1,7 +1,6 @@
 import 'package:badges/badges.dart';
-import 'package:farmboxapp/Provider/CartProvider.dart';
-import 'package:farmboxapp/Screens/Favorite_Screen/FavoriteList.dart';
-import 'package:farmboxapp/Screens/ShoppingCartScreen/cart.dart';
+import 'package:bexindia/Provider/CartProvider.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
@@ -21,7 +20,7 @@ class HeaderWithSearchBox extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(bottom: kDefaultPadding * 2.5),
       // It will cover 20% of our total height
-      height: size.height * 0.23,
+      height: size.height * 0.20,
       child: Stack(
         children: <Widget>[
           Container(
@@ -33,10 +32,10 @@ class HeaderWithSearchBox extends StatelessWidget {
             height: size.height * 0.5 - 27,
             decoration: BoxDecoration(
               color: PrimaryColor,
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(36),
-                bottomRight: Radius.circular(36),
-              ),
+              // borderRadius: BorderRadius.only(
+              //   bottomLeft: Radius.circular(36),
+              //   bottomRight: Radius.circular(36),
+              // ),
             ),
             child: Padding(
               padding: const EdgeInsets.only(top: 30),
@@ -44,7 +43,7 @@ class HeaderWithSearchBox extends StatelessWidget {
                 //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Text(
-                    'Farm Box',
+                    'Behindia',
                     style: Theme.of(context).textTheme.headline5.copyWith(
                         color: Colors.white, fontWeight: FontWeight.bold),
                   ),
@@ -77,7 +76,7 @@ class HeaderWithSearchBox extends StatelessWidget {
             ),
           ),
           Positioned(
-            bottom: 0,
+            bottom: 5,
             left: 0,
             right: 0,
             child: Container(
@@ -87,7 +86,7 @@ class HeaderWithSearchBox extends StatelessWidget {
               height: 45,
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(10),
                 boxShadow: [
                   BoxShadow(
                     offset: Offset(0, 10),

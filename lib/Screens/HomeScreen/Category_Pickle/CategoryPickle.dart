@@ -1,12 +1,9 @@
 import 'dart:convert';
 
-import 'package:farmboxapp/Helper/config.dart';
-import 'package:farmboxapp/Models/CategoryModel.dart';
-import 'package:farmboxapp/Models/ProductsModel.dart';
-import 'package:farmboxapp/Models/UserModel.dart';
-import 'package:farmboxapp/Provider/CategoryProvider.dart';
-import 'package:farmboxapp/Screens/Catogory/SubProductsList.dart';
-import 'package:farmboxapp/Screens/ProductScreen/DetailPage.dart';
+import 'package:bexindia/Helper/config.dart';
+import 'package:bexindia/Models/ProductsModel.dart';
+import 'package:bexindia/Screens/ProductScreen/DetailPage.dart';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
@@ -134,7 +131,7 @@ class _CategoryPickleState extends State<CategoryPickle> {
                             height: 15,
                             width: 35,
                             decoration: BoxDecoration(
-                                color: Colors.green,
+                                color: PrimaryColor,
                                 borderRadius: BorderRadius.only(
                                     bottomLeft: Radius.circular(6),
                                     topLeft: Radius.circular(3),

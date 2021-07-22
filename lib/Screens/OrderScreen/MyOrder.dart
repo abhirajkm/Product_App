@@ -1,10 +1,10 @@
 import 'dart:convert';
 
-import 'package:farmboxapp/Constraints.dart';
-import 'package:farmboxapp/Helper/config.dart';
-import 'package:farmboxapp/Models/Orders.dart';
-import 'package:farmboxapp/Models/UserModel.dart';
-import 'package:farmboxapp/Provider/OrderProvider.dart';
+import 'package:bexindia/Helper/config.dart';
+import 'package:bexindia/Models/Orders.dart';
+import 'package:bexindia/Models/UserModel.dart';
+import 'package:bexindia/Provider/OrderProvider.dart';
+
 import 'package:http/http.dart' as http;
 
 import 'package:flutter/material.dart';
@@ -12,6 +12,7 @@ import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../Constraints.dart';
 import 'OrderDetails.dart';
 
 
@@ -228,7 +229,7 @@ class _OrdersState extends State<Orders> {
             children: <Widget>[
               Center(
                   child: CircularProgressIndicator(
-                      backgroundColor: Colors.green,
+                      backgroundColor: Colors.blue,
                       valueColor: new AlwaysStoppedAnimation<Color>(
                           Colors.green[100]))),
             ],

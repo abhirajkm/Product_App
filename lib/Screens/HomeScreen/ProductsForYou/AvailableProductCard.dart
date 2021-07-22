@@ -88,7 +88,7 @@ class AvailableProCard extends StatelessWidget {
               height: 15,
               width: 35,
               decoration: BoxDecoration(
-                  color: Colors.green,
+                  color: PrimaryColor,
                   borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(6),
                       topLeft: Radius.circular(3),

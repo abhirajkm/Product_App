@@ -1,13 +1,14 @@
-import 'package:farmboxapp/Screens/Catogory/CategoryList.dart';
-import 'package:farmboxapp/Screens/HomeScreen/HomeScreen.dart';
-import 'package:farmboxapp/Screens/ProfileScreen/profile.dart';
+
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import '../Constraints.dart';
+import 'Catogory/CategoryList.dart';
 import 'Favorite_Screen/FavoriteList.dart';
+import 'HomeScreen/HomeScreen.dart';
 import 'OrderScreen/MyOrder.dart';
 import 'OrderScreen/Order.dart';
+import 'ProfileScreen/profile.dart';
 
 
 class FirstScreen extends StatefulWidget {

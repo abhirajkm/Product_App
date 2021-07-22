@@ -1,22 +1,23 @@
 import 'dart:convert';
 
 import 'package:badges/badges.dart';
-import 'package:farmboxapp/Provider/CartProvider.dart';
-import 'package:farmboxapp/Screens/BottomNavigation.dart';
-import 'package:farmboxapp/Screens/Favorite_Screen/FavoriteList.dart';
+import 'package:bexindia/Helper/config.dart';
+import 'package:bexindia/Models/ProductsModel.dart';
+import 'package:bexindia/Provider/CartProvider.dart';
+import 'package:bexindia/Provider/ProductProvider.dart';
+
 import 'package:flutter_svg/svg.dart';
 import 'package:http/http.dart' as http;
-import 'package:farmboxapp/Screens/Searchitems/SearchList.dart';
-import 'package:farmboxapp/Screens/ShoppingCartScreen/cart.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui';
 import 'package:provider/provider.dart';
-import 'package:farmboxapp/Helper/Config.dart';
-import 'package:farmboxapp/Models/ProductsModel.dart';
-import 'package:farmboxapp/Provider/ProductProvider.dart';
+
 
 import '../../Constraints.dart';
+import '../BottomNavigation.dart';
+import 'SearchList.dart';
 class Search extends StatefulWidget {
   const Search({Key key}) : super(key: key);
 
@@ -41,7 +42,7 @@ class _SearchState extends State<Search> {
       Container(
       margin: EdgeInsets.only(bottom: kDefaultPadding * 2.5),
       // It will cover 20% of our total height
-      height: size.height * 0.23,
+      height: size.height * 0.20,
       child: Stack(
         children: <Widget>[
           Container(
@@ -53,10 +54,10 @@ class _SearchState extends State<Search> {
             height: size.height * 0.5 - 27,
             decoration: BoxDecoration(
               color: PrimaryColor,
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(36),
-                bottomRight: Radius.circular(36),
-              ),
+              // borderRadius: BorderRadius.only(
+              //   bottomLeft: Radius.circular(36),
+              //   bottomRight: Radius.circular(36),
+              // ),
             ),
             child: Padding(
               padding: const EdgeInsets.only(top: 30),
@@ -70,7 +71,7 @@ class _SearchState extends State<Search> {
                       icon: Icon(Icons.arrow_back,color: Colors.white,)
                   ),
                   Text(
-                    'Farm Box',
+                    'Behindia',
                     style: Theme.of(context).textTheme.headline5.copyWith(
                         color: Colors.white, fontWeight: FontWeight.bold),
                   ),
@@ -100,7 +101,7 @@ class _SearchState extends State<Search> {
             ),
           ),
           Positioned(
-            bottom: 0,
+            bottom: 5,
             left: 0,
             right: 0,
             child: Container(
@@ -110,7 +111,7 @@ class _SearchState extends State<Search> {
               height: 45,
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(10),
                 boxShadow: [
                   BoxShadow(
                     offset: Offset(0, 10),

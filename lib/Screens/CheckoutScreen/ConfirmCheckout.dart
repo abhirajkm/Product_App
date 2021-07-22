@@ -1,11 +1,10 @@
 
-import 'package:farmboxapp/Constraints.dart';
-import 'package:farmboxapp/Helper/config.dart';
-import 'package:farmboxapp/Models/CartModel.dart';
-import 'package:farmboxapp/Models/UserModel.dart';
-import 'package:farmboxapp/Provider/CartProvider.dart';
-import 'package:farmboxapp/Screens/BottomNavigation.dart';
-import 'package:farmboxapp/Screens/PaymentScreen/paymentsuccess.dart';
+import 'package:bexindia/Helper/config.dart';
+import 'package:bexindia/Models/CartModel.dart';
+import 'package:bexindia/Models/UserModel.dart';
+import 'package:bexindia/Provider/CartProvider.dart';
+
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
@@ -14,6 +13,8 @@ import 'package:provider/provider.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
+
+import '../../Constraints.dart';
 
 
 class ConfirmCheckout extends StatefulWidget {
@@ -371,14 +372,14 @@ class _ConfirmCheckoutState extends State<ConfirmCheckout> {
     var options = {
       'key': 'rzp_test_1DP5mmOlF5G5ag',
       'amount':n*100 ,
-      "image" : "data:image/png;base64,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",
-      'name': 'Farm Box',
+      "image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbkA8woKtZXzTvXx1EXeNjJhpUWJYe-zMORg&usqp=CAU",
+      'name': 'Bex India',
       'description': 'Purchase Product',
       'external': {
         'wallets': ['paytm']
       },
       'theme': {
-        "color": "#05A21C"
+        "color": "#2980b9"
       }
     };
 

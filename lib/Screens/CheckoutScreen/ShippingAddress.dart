@@ -1,15 +1,17 @@
 import 'dart:convert';
 
-import 'package:farmboxapp/Constraints.dart';
-import 'package:farmboxapp/Helper/config.dart';
-import 'package:farmboxapp/Models/UserModel.dart';
-import 'package:farmboxapp/Provider/CartProvider.dart';
+import 'package:bexindia/Helper/config.dart';
+import 'package:bexindia/Models/UserModel.dart';
+import 'package:bexindia/Provider/CartProvider.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
+
+import '../../Constraints.dart';
 
 class ShippingAddress extends StatefulWidget {
   @override

@@ -1,18 +1,17 @@
 import 'dart:convert';
-import 'package:farmboxapp/Constraints.dart';
-import 'package:farmboxapp/Helper/PrefsHelper.dart';
-import 'package:farmboxapp/Helper/config.dart';
-import 'package:farmboxapp/Models/UserModel.dart';
-import 'package:farmboxapp/Screens/BottomNavigation.dart';
-import 'package:farmboxapp/Screens/Catogory/CategoryList.dart';
-import 'package:farmboxapp/Screens/RegistrationScreen/register.dart';
+import 'package:bexindia/Helper/PrefsHelper.dart';
+import 'package:bexindia/Helper/config.dart';
+import 'package:bexindia/Models/UserModel.dart';
+import 'package:bexindia/Screens/RegistrationScreen/register.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:progress_dialog/progress_dialog.dart';
 import 'package:http/http.dart' as http;
-import 'package:farmboxapp/Screens/LoginScreen/ForgotPassword/forgotpassword.dart';
 
+
+import '../../Constraints.dart';
 import 'ForgotPassword/forgotpassword.dart';
 
 
@@ -161,6 +160,7 @@ class _SignInState extends State<SignIn> {
                               onChanged: (String value) {
                                 phone = value;
                               },
+                              cursorColor: PrimaryColor,
                               inputFormatters: [
                                 LengthLimitingTextInputFormatter(10),
                               ],
@@ -196,6 +196,7 @@ class _SignInState extends State<SignIn> {
                         onChanged: (String value) {
                           password = value;
                         },
+                        cursorColor: PrimaryColor,
                         obscureText: _pass,
                         keyboardType:TextInputType.visiblePassword,
                         decoration: InputDecoration(
@@ -214,7 +215,7 @@ class _SignInState extends State<SignIn> {
                           suffixIcon: IconButton(
                         icon: Icon(_pass?Icons.visibility_off:Icons.remove_red_eye,
                           size: _pass?20:22,
-                          color: _pass?Colors.green:PrimaryColor,
+                          color: _pass?PrimaryColor:PrimaryColor,
                         ),
                         onPressed: (){
                           setState(() {
@@ -226,20 +227,20 @@ class _SignInState extends State<SignIn> {
                         textInputAction: TextInputAction.done,
                       ),
                       SizedBox(height: 15,),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 180),
-                        child: GestureDetector(
-                          onTap: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=> Forgotpassword()));
-                          },
-                          child: Text("Forget Password ?",style: TextStyle(
-                            fontSize: 13,fontWeight: FontWeight.w500,
-                            color:PrimaryColor,
-                            //decoration: TextDecoration.underline
-
-                          ),),
-                        ),
-                      ),
+                      // Padding(
+                      //   padding: const EdgeInsets.only(left: 180),
+                      //   child: GestureDetector(
+                      //     onTap: (){
+                      //       //Navigator.push(context, MaterialPageRoute(builder: (context)=> Forgotpassword()));
+                      //     },
+                      //     child: Text("Forget Password ?",style: TextStyle(
+                      //       fontSize: 13,fontWeight: FontWeight.w500,
+                      //       color:PrimaryColor,
+                      //       //decoration: TextDecoration.underline
+                      //
+                      //     ),),
+                      //   ),
+                      // ),
 
 
                       SizedBox(height: 20,),

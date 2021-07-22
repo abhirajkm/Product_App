@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 // Colors that we use in our app
-const PrimaryColor = Color(0xff0a9505);
+const PrimaryColor = Color(0xff833ab4);
 const TextColor = Color(0xFF3C4046);
 const BackgroundColor = Color(0xFFF5F5F5);
 const SecondColor = Color(0xffd8045e);

@@ -1,7 +1,8 @@
 import 'dart:convert';
 
+import 'package:bexindia/Models/ProductsModel.dart';
 import 'package:flutter/material.dart';
-import 'package:farmboxapp/Models/ProductsModel.dart';
+
 
 class HomeProvider extends ChangeNotifier{
   String _searchText = "";

@@ -1,5 +1,7 @@
 import 'package:badges/badges.dart';
-import 'package:farmboxapp/Provider/CartProvider.dart';
+import 'package:bexindia/Constraints.dart';
+import 'package:bexindia/Provider/CartProvider.dart';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -37,7 +39,7 @@ class _AllOrdersState extends State<AllOrders> {
                     Navigator.pushReplacementNamed(context, "/myCart");
                   },
                   child: Badge(
-                    badgeColor: Colors.green,
+                    badgeColor: PrimaryColor,
                     position: BadgePosition.topEnd(top: 4),
                     badgeContent: Text(cartProvider.cartCount.toString(),style: TextStyle(color: Colors.white,fontSize: 13),),
                     child: Icon(Icons.shopping_cart,color: Colors.black,size: 23,),

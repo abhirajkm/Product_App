@@ -1,6 +1,7 @@
 import 'dart:convert';
-import 'package:farmboxapp/Helper/PrefsHelper.dart';
-import 'package:farmboxapp/Models/CartModel.dart';
+
+import 'package:bexindia/Helper/PrefsHelper.dart';
+import 'package:bexindia/Models/CartModel.dart';
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

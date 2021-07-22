@@ -1,12 +1,12 @@
 import 'dart:convert';
 import 'package:badges/badges.dart';
-import 'package:farmboxapp/Helper/config.dart';
-import 'package:farmboxapp/Models/ProductsModel.dart';
-import 'package:farmboxapp/Models/UserModel.dart';
-import 'package:farmboxapp/Provider/CartProvider.dart';
-import 'package:farmboxapp/Provider/ProductProvider.dart';
-import 'package:farmboxapp/Screens/ProductScreen/DetailPage.dart';
-import 'package:farmboxapp/Screens/ShoppingCartScreen/cart.dart';
+import 'package:bexindia/Helper/config.dart';
+import 'package:bexindia/Models/ProductsModel.dart';
+import 'package:bexindia/Models/UserModel.dart';
+import 'package:bexindia/Provider/CartProvider.dart';
+import 'package:bexindia/Provider/ProductProvider.dart';
+import 'package:bexindia/Screens/ProductScreen/DetailPage.dart';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
@@ -120,7 +120,7 @@ class _SubCategoryListState extends State<SubCategoryList> {
                 child: Padding(
                   padding: const EdgeInsets.only(right: 20),
                   child: Badge(
-                    badgeColor: Colors.green,
+                    badgeColor: PrimaryColor,
                     position: BadgePosition.topEnd(top: 2),
                     badgeContent: Text(cartProvider.cartCount.toString(),style: TextStyle(color: Colors.white,fontSize: 13,fontWeight: FontWeight.w600),),
                     child: Icon(Icons.shopping_cart,color: Colors.black,size: 23,),
@@ -354,7 +354,7 @@ class _SubCategoryListState extends State<SubCategoryList> {
             children: <Widget>[
               Center(
                   child: CircularProgressIndicator(
-                      backgroundColor: Colors.green,
+                      backgroundColor: Colors.blue,
                       valueColor: new AlwaysStoppedAnimation<Color>(
                           Colors.green[100]))),
             ],

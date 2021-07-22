@@ -1,12 +1,10 @@
 import 'dart:convert';
 
-import 'package:farmboxapp/Helper/config.dart';
-import 'package:farmboxapp/Models/ProductsModel.dart';
-import 'package:farmboxapp/Provider/AllProductProvider.dart';
-import 'package:farmboxapp/Provider/ProductProvider.dart';
+import 'package:bexindia/Models/ProductsModel.dart';
+import 'package:bexindia/Provider/AllProductProvider.dart';
+import 'package:bexindia/Screens/ProductScreen/DetailPage.dart';
+import 'package:bexindia/Screens/ShoppingCartScreen/cart.dart';
 
-import 'package:farmboxapp/Screens/ProductScreen/DetailPage.dart';
-import 'package:farmboxapp/Screens/ShoppingCartScreen/cart.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
@@ -195,7 +193,7 @@ class _AvailProductAllState extends State<AvailProductAll> {
                           height: 15,
                           width: 35,
                           decoration: BoxDecoration(
-                              color: Colors.green,
+                              color: PrimaryColor,
                               borderRadius: BorderRadius.only(
                                   bottomLeft: Radius.circular(6),
                                   topLeft: Radius.circular(3),

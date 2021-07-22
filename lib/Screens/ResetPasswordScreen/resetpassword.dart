@@ -1,12 +1,15 @@
 import 'dart:convert';
-import 'package:farmboxapp/Helper/config.dart';
-import 'package:farmboxapp/Models/UserModel.dart';
-import 'package:farmboxapp/Screens/LoginScreen/signin.dart';
+
+import 'package:bexindia/Helper/config.dart';
+import 'package:bexindia/Models/UserModel.dart';
+import 'package:bexindia/Screens/LoginScreen/signin.dart';
 import 'package:flutter/material.dart';
-import 'package:farmboxapp/Constraints.dart';
+
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
+
+import '../../Constraints.dart';
 class Resetpassword extends StatefulWidget {
   const Resetpassword({Key key}) : super(key: key);
 
@@ -132,11 +135,11 @@ class _ResetpasswordState extends State<Resetpassword> {
                                 ),
 
                                 hintText: "Old Password",
-                                prefixIcon: Icon(Icons.lock,color:Colors.green),
+                                prefixIcon: Icon(Icons.lock,color:PrimaryColor),
                                 suffixIcon: IconButton(
                                   icon: Icon(_oldText?Icons.visibility_off:Icons.remove_red_eye,
                                     size: _oldText?20:22,
-                                    color: _oldText?Colors.green:PrimaryColor,
+                                    color: _oldText?PrimaryColor:PrimaryColor,
                                   ),
                                   onPressed: (){
                                     setState(() {
@@ -178,7 +181,7 @@ class _ResetpasswordState extends State<Resetpassword> {
                                 ),
 
                                 hintText: "New Password",
-                                prefixIcon: Icon(Icons.lock,color:Colors.green),
+                                prefixIcon: Icon(Icons.lock,color:PrimaryColor),
                                 suffixIcon: IconButton(
                                     onPressed: (){
                                       setState(() {
@@ -187,7 +190,7 @@ class _ResetpasswordState extends State<Resetpassword> {
                                     },
                                     icon: Icon(_secureText?Icons.visibility_off:Icons.remove_red_eye,
                                       size: _secureText?20:22,
-                                      color: _secureText?Colors.green:PrimaryColor,
+                                      color: _secureText?PrimaryColor:PrimaryColor,
                                     )),
                                 // InkWell(
                                 //     onTap: _togglePasswordView,
@@ -221,11 +224,11 @@ class _ResetpasswordState extends State<Resetpassword> {
                                 ),
 
                                 hintText: "Confirm Password",
-                                prefixIcon: Icon(Icons.lock,color:Colors.green),
+                                prefixIcon: Icon(Icons.lock,color:PrimaryColor),
                                 suffixIcon: IconButton(
                                   icon: Icon(_confirmSecure?Icons.visibility_off:Icons.remove_red_eye,
                                     size: _confirmSecure?20:22,
-                                    color: _confirmSecure?Colors.green:PrimaryColor,
+                                    color: _confirmSecure?PrimaryColor:PrimaryColor,
                                   ),
                                   onPressed: (){
                                     setState(() {

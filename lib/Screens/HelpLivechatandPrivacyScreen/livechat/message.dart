@@ -1,9 +1,10 @@
+import 'package:bexindia/Models/ChatMessage.dart';
 import 'package:flutter/material.dart';
 //import 'package:savebox/Models/ChatMessage.dart';
 
 import '../../../Constraints.dart';
 import 'text_message.dart';
-import 'package:farmboxapp/models/ChatMessage.dart';
+
 
 class Message extends StatelessWidget {
   const Message({

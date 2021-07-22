@@ -1,5 +1,6 @@
+import 'package:bexindia/Screens/LoginScreen/ForgotPassword/timer.dart';
 import 'package:flutter/material.dart';
-import 'package:farmboxapp/Screens/LoginScreen/ForgotPassword/timer.dart';
+
 
 
 import 'otpwidget.dart';

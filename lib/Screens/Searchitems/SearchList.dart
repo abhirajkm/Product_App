@@ -1,10 +1,11 @@
 
-import 'package:farmboxapp/Constraints.dart';
-import 'package:farmboxapp/Provider/CartProvider.dart';
-import 'package:farmboxapp/Provider/ProductProvider.dart';
-import 'package:farmboxapp/Screens/ProductScreen/DetailPage.dart';
+
+import 'package:bexindia/Provider/ProductProvider.dart';
+import 'package:bexindia/Screens/ProductScreen/DetailPage.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import '../../Constraints.dart';
 
 class SearchList extends StatefulWidget {
   @override

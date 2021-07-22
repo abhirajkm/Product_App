@@ -1,19 +1,18 @@
 import 'dart:convert';
 
-import 'package:farmboxapp/Constraints.dart';
-import 'package:farmboxapp/Helper/config.dart';
-import 'package:farmboxapp/Models/FavoriteModel.dart';
-import 'package:farmboxapp/Models/UserModel.dart';
-import 'package:farmboxapp/Provider/FavoriteProvider.dart';
-import 'package:farmboxapp/Provider/ProductProvider.dart';
-import 'package:farmboxapp/Screens/Alert_Box/Dialog_alert.dart';
-import 'package:farmboxapp/Screens/ProductScreen/DetailPage.dart';
+import 'package:bexindia/Helper/config.dart';
+import 'package:bexindia/Models/FavoriteModel.dart';
+import 'package:bexindia/Models/UserModel.dart';
+import 'package:bexindia/Screens/Alert_Box/Dialog_alert.dart';
+
 
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
+
+import '../../Constraints.dart';
 
 
 class FavoriteList extends StatefulWidget {

@@ -1,9 +1,8 @@
-import 'package:farmboxapp/Constraints.dart';
-import 'package:farmboxapp/Screens/BottomNavigation.dart';
-import 'package:farmboxapp/Screens/Catogory/CategoryList.dart';
-import 'package:farmboxapp/Screens/HomeScreen/HomeScreen.dart';
-import 'package:farmboxapp/Screens/ProfileScreen/profile.dart';
+
 import 'package:flutter/material.dart';
+
+import '../../Constraints.dart';
+import '../BottomNavigation.dart';
 class Paymentsuccess extends StatefulWidget {
   const Paymentsuccess({Key key}) : super(key: key);
 

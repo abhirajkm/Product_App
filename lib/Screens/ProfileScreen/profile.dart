@@ -1,25 +1,20 @@
 
 import 'dart:convert';
 
-import 'package:farmboxapp/Models/UserModel.dart';
-import 'package:farmboxapp/Screens/About&Terms&Condition/AboutUs.dart';
-import 'package:farmboxapp/Screens/About&Terms&Condition/TermsConditions.dart';
-
-import 'package:farmboxapp/Constraints.dart';
-import 'package:farmboxapp/Screens/CheckoutScreen/ShippingAddress.dart';
-import 'package:farmboxapp/Screens/Favorite_Screen/FavoriteList.dart';
 
 
-import 'package:farmboxapp/Screens/HelpLivechatandPrivacyScreen/help.dart';
-import 'package:farmboxapp/Screens/CheckoutScreen/Components/NewAddress.dart';
-import 'package:farmboxapp/Screens/ProfileScreen/AddAddres.dart';
-import 'package:farmboxapp/Screens/ProfileScreen/logout.dart';
-import 'package:farmboxapp/Screens/ResetPasswordScreen/resetpassword.dart';
-
-
+import 'package:bexindia/Models/UserModel.dart';
+import 'package:bexindia/Screens/About&Terms&Condition/AboutUs.dart';
+import 'package:bexindia/Screens/About&Terms&Condition/TermsConditions.dart';
+import 'package:bexindia/Screens/HelpLivechatandPrivacyScreen/help.dart';
+import 'package:bexindia/Screens/ResetPasswordScreen/resetpassword.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import '../../Constraints.dart';
+import 'AddAddres.dart';
+import 'logout.dart';
 
 class Profile extends StatefulWidget {
   const Profile({Key key}) : super(key: key);
@@ -71,51 +66,17 @@ class _ProfileState extends State<Profile> {
           children: [
             Container(
               width: double.infinity,
-              height: 160,
+              height: 100,
               child: Column(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(25, 30, 50, 00),
-                    child: Stack(
-                      children: <Widget>[
-                        CircleAvatar(
-                          radius: 45,
-                          child: ClipOval(
-                            child:
 
-                            Image.asset(
-                              'assets/logoo.png',
-                              height: 150,
-                              width: 150,
-                              fit: BoxFit.contain,
-                            ),
-                          ),
-                        ),
-                        // Positioned(
-                        //     bottom: 2,
-                        //     right: 1,
-                        //     child: Container(
-                        //       height: 35,
-                        //       width: 35,
-                        //       child: Icon(
-                        //         Icons.add_a_photo,
-                        //         color: Colors.white,
-                        //       ),
-                        //       decoration: BoxDecoration(
-                        //           color: Colors.green,
-                        //           borderRadius:
-                        //               BorderRadius.all(Radius.circular(20))),
-                        //     ))
-                      ],
-                    ),
-                  ),
                   SizedBox(
-                    height: 10,
+                    height: 40,
                   ),
                   Padding(
                     padding: const EdgeInsets.only(right: 20.0),
                     child: Text(
-                      name,
+                      name.toUpperCase(),
                       style:
                           TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
                     ),
@@ -126,6 +87,7 @@ class _ProfileState extends State<Profile> {
             Expanded(
               child: SingleChildScrollView(
                 child: Container(
+
                   margin: EdgeInsets.all(15),
                   decoration: BoxDecoration(
                     color: BackgroundColor,
@@ -135,9 +97,9 @@ class _ProfileState extends State<Profile> {
                   ),
                   child: Column(
                     children: [
-                      SizedBox(
-                        height: 30,
-                      ),
+                      // SizedBox(
+                      //   height: 30,
+                      // ),
                       GestureDetector(
                         onTap: (){
                           Navigator.push(context, MaterialPageRoute(builder: (context)=>Resetpassword()));
